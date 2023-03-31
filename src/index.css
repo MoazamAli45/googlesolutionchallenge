@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Raleway:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+body {
+  overflow-x: hidden;
+  font-family: "Play", "Raleway", serif;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 56.25%;
+  }
+}
+p {
+  font-family: "Raleway", serif;
+}
