@@ -51,7 +51,7 @@ const Blog = () => {
             </p>
           </div>
           <div className={styles["blog-para1"]}>
-            <p>
+            <p style={{ textAlign: "justify", padding: ".5rem 0" }}>
               Although earthquakes of this scale are not entirely unprecedented
               in this region of Turkey, given its location near two fault lines,
               the recent 7.6 and 7.8 magnitude earthquakes in have highlighted
