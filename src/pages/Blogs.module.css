@@ -53,7 +53,7 @@ h3 {
 }
 .blog-green {
   background-color: rgba(163, 243, 162, 1);
-  width: 90%;
+  width: 85%;
   padding: 1.3rem 1.6rem;
   line-height: 1.5;
   border-radius: 20px;
@@ -169,5 +169,10 @@ h4 {
 @media (max-width: 490px) {
   .btn {
     padding: 15px 40px;
+  }
+}
+@media (max-width: 900px) {
+  .blog-green {
+    width: 80%;
   }
 }
