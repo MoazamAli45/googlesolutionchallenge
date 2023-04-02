@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  width: 90%;
+  width: 95%;
   margin: auto;
 }
 .donate h4 {
@@ -17,6 +17,19 @@
 }
 .donate {
   width: 40%;
+}
+.donate__link {
+  text-align: right;
+}
+.donate__link h4 {
+  color: #14183e;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+}
+.donate__link:hover h4 {
+  text-decoration: underline;
 }
 @media (max-width: 768px) {
   .donate {

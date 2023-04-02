@@ -1,0 +1,27 @@
+.table {
+  width: 70%;
+  margin: 0 auto;
+}
+.donate_head {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #14183e;
+  padding: 1rem 0;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+@media (max-width: 768px) {
+  .table {
+    width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  .table {
+    width: 100%;
+  }
+}

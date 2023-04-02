@@ -11,6 +11,7 @@ import AuthHome from "./pagesauth/HomePage";
 
 import Donation from "./componentsauth/StartingPage/Donation";
 import Blogs from "./pages/Blogs";
+import DonationTable from "./componentsauth/StartingPage/Donation-table";
 
 function App() {
   const authCtx = useContext(authContext);
@@ -27,6 +28,7 @@ function App() {
       <Route path="/profile" element={!loggedin && <Auth />} />
       <Route path="/donation" element={<Donation />} />
       <Route path="/blogs" element={<Blogs />} />
+      <Route path="donation-table" element={<DonationTable />} />
       <Route path="*" element={<Home />} />
     </Routes>
   );

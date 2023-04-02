@@ -9,41 +9,6 @@ import { useState } from "react";
 const StartingPageContent = () => {
   const navigate = useNavigate();
 
-  const [data, setData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    country: "",
-  });
-
-  let name, value;
-  const getUserData = (e) => {
-    name = e.target.value;
-    value = e.target.value;
-    setData({ ...data, [name]: value });
-  };
-
-  const Postdata = async (e) => {
-    e.preventDefault();
-    const { name, phone, email, country } = data;
-    const res = await fetch(
-      "https://authenticationproject-4c032-default-rtdb.firebaseio.com/volunteer.json",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          country,
-        }),
-      }
-    );
-    navigate("/home");
-  };
-
   return (
     <section className={classes.starting}>
       <div className={classes.starting__content}>
@@ -60,33 +25,24 @@ const StartingPageContent = () => {
             }}
           >
             <Stack spacing={2} direction="column">
-              <TextField
-                label="Name"
-                name="name"
-                onChange={getUserData}
-                variant="outlined"
-                required
-              />
+              <TextField label="Name" name="name" variant="outlined" required />
               <TextField
                 label="Email"
                 name="email"
                 variant="outlined"
                 type="email"
-                onChange={getUserData}
                 required
               />
               <TextField
                 label="Contact No"
                 name="phone"
                 variant="outlined"
-                onChange={getUserData}
                 required
               />
               <TextField
                 label="Country"
                 name="country"
                 variant="outlined"
-                onChange={getUserData}
                 required
               />
 
@@ -99,7 +55,9 @@ const StartingPageContent = () => {
                     backgroundColor: "#31b5aa",
                   },
                 }}
-                onClick={Postdata}
+                onClick={() => {
+                  navigate("/home");
+                }}
               >
                 Submit
               </Button>

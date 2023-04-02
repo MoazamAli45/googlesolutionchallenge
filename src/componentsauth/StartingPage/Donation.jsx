@@ -6,7 +6,7 @@ import { Stack } from "@mui/system";
 import { Button } from "@mui/joy";
 import { useNavigate } from "react-router-dom";
 import { Snackbar } from "@mui/material";
-
+import { Link } from "react-router-dom";
 const Donation = () => {
   const [open, setIsOpen] = useState(false);
   const [name, setName] = useState("");
@@ -21,19 +21,48 @@ const Donation = () => {
 
   const nameHandler = (event) => {
     setName(event.target.value);
-    console.log(name);
+    // console.log(name);
   };
   const emailHandler = (event) => {
     setEmail(event.target.value);
-    console.log(email);
+    // console.log(email);
   };
   const donationHandler = (event) => {
     setDonation(event.target.value);
-    console.log(donation);
+    // console.log(donation);
+  };
+
+  const Postdata = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(
+        "https://solutionchallenge-c9532-default-rtdb.firebaseio.com//donation.json",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            donation,
+          }),
+        }
+      );
+    } catch (err) {
+      alert(err);
+    }
+    setIsOpen(true);
+    setName("");
+    setEmail("");
+    setDonation("");
   };
 
   return (
     <Layout>
+      <Link className={classes.donate__link} to="/donation-table">
+        <h4>Track your donation</h4>
+      </Link>
       <div className={classes.donation}>
         <div className={classes.donate}>
           <h4>Donation</h4>
@@ -80,7 +109,7 @@ const Donation = () => {
                     backgroundColor: "#31b5aa",
                   },
                 }}
-                onClick={() => {}}
+                onClick={Postdata}
               >
                 Donate now
               </Button>
